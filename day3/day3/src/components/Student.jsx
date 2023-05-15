@@ -12,6 +12,7 @@ const Student = () => {
   const readValue = ()=>{
     console.log("clicked")
     console.log("inputs:",inputs);
+    if (props.method==="post")
     axios.post("http://localhost:8080/create",inputs)
     .then((response)=>{
     alert("success")
@@ -19,7 +20,16 @@ const Student = () => {
 
     })
     .catch(err=>console.log(err))
-  }
+  
+  if(props.method==="put"){
+    axios.put("http://localhost:8080/update/"+inputHandlar._id,inputs)
+    .then((response)=>{
+      console.log("put:"+response.data);
+      alert("updated");
+      window.location.reload(false)
+    })
+    .catch((err)=>{console.log(err)})
+  }}
   return (
     <div style={{paddingTop:'100px',textAlign:'center'}}>
         <Typography variant ='h4'>Add Students </Typography>

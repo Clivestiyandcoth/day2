@@ -14,7 +14,7 @@ function App() {
      <Navigation/>
      <Routes>
         <Route path='/table' element={<View/>}></Route>
-        <Route path='/' element={<Student/>}></Route>
+        <Route path='/' element={<Student />}></Route>
      </Routes>
     </div>
   );
